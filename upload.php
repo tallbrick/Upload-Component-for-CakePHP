@@ -250,7 +250,7 @@ class UploadComponent extends Object{
 	 * @return boolean True on success, false on failure
 	 */
 	function save() {
-      	if ( $this->_move_uploaded_file($this->info['tmp_name'], $this->destination . $this->filename) ) {
+		if ( $this->_move_uploaded_file($this->info['tmp_name'], $this->destination . $this->filename) ) {
 
 			$this->info['directory'] = $this->destination;
 
@@ -258,11 +258,11 @@ class UploadComponent extends Object{
 			$this->Session->setFlash("Success: File upload saved successfully.");
 			return true;
 		  
-      	}else{
+		}else{
 		
 			$this->log_error_and_return("Error: File upload not saved.");
 			return false;
-        }
+		}
 	}
 
 
